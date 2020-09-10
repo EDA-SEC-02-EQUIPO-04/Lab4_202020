@@ -35,28 +35,7 @@ es decir contiene los modelos con los datos en memoria.
 # -----------------------------------------------------
 # API del TAD Catalogo de películas.
 # -----------------------------------------------------
-""""Opcion 3
 def new_catalog():
-
-      catalog = {
-        'movies': lt.newList('SINGLE_LINKED'),
-        'casting': lt.newList('SINGLE_LINKED'),
-        'movie_id': mp.newMap(200, maptype='PROBING', loadfactor=0.4, comparefunction=compare_ids)
-    }
-    return catalog
-
-# Funciones para agregar informacion al catalogo
-def add_movies(catalog, movie):
-    lt.addLast(catalog['movies'], movie)
-    mp.put(catalog['movie_id'], movie['id'], movie)
-
-def add_casting(catalog, movie):
-    lt.addLast(catalog['casting'], movie)
-    mp.put(catalog['movie_id'], movie['id'], movie)
-    
-...
-""""
-=======
     """ Inicializa el catálogo de películas
 
     Crea una lista vacia para guardar todas las películas.
@@ -437,7 +416,7 @@ def addMovieDirector(catalog_movies, catalog_casting, directorname, movie):
 # Funciones de consulta
 # ==============================
 
-"""" Opcion 3
+""" Opcion 3
 def movies_size(catalog):
     return lt.size(catalog['movies'])
 
@@ -445,7 +424,7 @@ def movies_size(catalog):
 def casting_size(catalog):
     return lt.size(catalog['casting'])
 ...
-""""
+"""
 """ Opción 2.
 def moviesSize(catalog):
     # Número de películas en el catago
@@ -482,11 +461,32 @@ def movie_language(catalog, position):
     return lista ['original_language']
 """
 
+"""Opcion 3
+def new_catalog():
+
+      catalog = {
+        'movies': lt.newList('SINGLE_LINKED'),
+        'casting': lt.newList('SINGLE_LINKED'),
+        'movie_id': mp.newMap(200, maptype='PROBING', loadfactor=0.4, comparefunction=compare_ids)
+    }
+    return catalog
+
+# Funciones para agregar informacion al catalogo
+def add_movies(catalog, movie):
+    lt.addLast(catalog['movies'], movie)
+    mp.put(catalog['movie_id'], movie['id'], movie)
+
+def add_casting(catalog, movie):
+    lt.addLast(catalog['casting'], movie)
+    mp.put(catalog['movie_id'], movie['id'], movie)
+
+...
+"""
 
 # ==============================
 # Funciones de Comparacion
 # ==============================
-"""" Opcion 3
+""" Opcion 3
 def comp_id(id,movies)
     first = lt.getElement(catalog['movies'['id']])
     if id == first:
@@ -496,7 +496,7 @@ def comp_id(id,movies)
     else:
         -1
 ...
-""""
+"""
 """ Opción 2.
 def compareMoviesIds(id1, id2):
     # Compara dos ids de película

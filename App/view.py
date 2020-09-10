@@ -38,17 +38,10 @@ operación seleccionada.
 # ___________________________________________________
 #  Ruta a los archivos
 # ___________________________________________________
-"""" Opcion 3
-allCasting = 'Movies/AllMoviesCastingRaw.csv'
-allMovies = 'Movies/AllMoviesDetailsCleaned.csv'
-smallCastingMovies = 'Movies/MoviesCastingRaw-small.csv'
-smallMovies = 'Movies/SmallMoviesDetailsCleaned.csv'
-# ___________________________________________________ 
-=======
 casting_file = config.data_dir + 'MoviesCastingRaw-small.csv'
 details_file = config.data_dir + 'MoviesDetailsCleaned-small.csv'
-...
-""""
+
+
 # ___________________________________________________
 #  Funciones para imprimir la inforamación de
 #  respuesta.  La vista solo interactua con
@@ -59,45 +52,6 @@ details_file = config.data_dir + 'MoviesDetailsCleaned-small.csv'
 # ___________________________________________________
 #  Menu principal
 # ___________________________________________________
-
-"""" Opcion 3
-def printMenu():
-    print("Bienvenido")
-    print("1- Cargar informacion del catalogo")
-    print("2- Mombres y cantidad de peliculas por productora")
-    print("3- Trabajos de un director")
-    print("4- Trabajos de un actor")
-    print("5- Peliculas por genero cinematografico")
-    print("6- Peliculas por pais")
-    print("0- Salir")
-
-
-while True:
-    printMenu()
-    inputs = input('Seleccione una opción para continuar')
-    if int(inputs[0]) == 1:
-        cont = controller.initCatalog()
-        print("Cargando información de los archivos...")
-        controller.loadData(cont, allCasting, allMovies, smallCastingMovies, smallMovies)
-        print('Peliculas cargadas: ' + str(controller.allMovies(cont)))
-        print('Actores cargados: ' + str(controller.allCasting(cont)))
-    elif int(inputs[0]) == 2:
-        None
-    elif int(inputs[0]) == 3:
-        None
-    elif int(inputs[0]) == 4:
-        None
-    elif int(inputs[0]) == 5:
-        None
-    elif int(inputs[0]) == 6:
-        None
-    elif int(inputs[0]) == 0:
-        sys.exit(0)
-sys.exit(0)
-...
-""""
-
-=======
 def print_menu():
     print('\nBienvenido,')
     print('1- Reinicializar el catálogo de películas.')
@@ -132,11 +86,11 @@ while True:
 # ==============================
 # Opción de programa alternativa.
 # ==============================
-""" Opción 2.
+""" Opción B.
 moviesfile = 'Data/Peliculas/SmallMoviesDetailsCleaned.csv'
 castingfile = 'Data/Peliculas/MoviesCastingRaw-Small.csv'
 """
-""" Opción 2.
+""" Opción B.
 def printmenu():
     print('Bienvenido')
     print('1. Cargar Archivos')
@@ -163,4 +117,54 @@ while True:
     elif int(inputs[0]) == 0:
         sys.exit(0)
 sys.exit(0)
+"""
+
+
+""" Opcion C
+allCasting = 'Movies/AllMoviesCastingRaw.csv'
+allMovies = 'Movies/AllMoviesDetailsCleaned.csv'
+smallCastingMovies = 'Movies/MoviesCastingRaw-small.csv'
+smallMovies = 'Movies/SmallMoviesDetailsCleaned.csv'
+# ___________________________________________________ 
+=======
+casting_file = config.data_dir + 'MoviesCastingRaw-small.csv'
+details_file = config.data_dir + 'MoviesDetailsCleaned-small.csv'
+...
+"""
+
+""" Opcion C
+def printMenu():
+    print("Bienvenido")
+    print("1- Cargar informacion del catalogo")
+    print("2- Mombres y cantidad de peliculas por productora")
+    print("3- Trabajos de un director")
+    print("4- Trabajos de un actor")
+    print("5- Peliculas por genero cinematografico")
+    print("6- Peliculas por pais")
+    print("0- Salir")
+
+
+while True:
+    printMenu()
+    inputs = input('Seleccione una opción para continuar')
+    if int(inputs[0]) == 1:
+        cont = controller.initCatalog()
+        print("Cargando información de los archivos...")
+        controller.loadData(cont, allCasting, allMovies, smallCastingMovies, smallMovies)
+        print('Peliculas cargadas: ' + str(controller.allMovies(cont)))
+        print('Actores cargados: ' + str(controller.allCasting(cont)))
+    elif int(inputs[0]) == 2:
+        None
+    elif int(inputs[0]) == 3:
+        None
+    elif int(inputs[0]) == 4:
+        None
+    elif int(inputs[0]) == 5:
+        None
+    elif int(inputs[0]) == 6:
+        None
+    elif int(inputs[0]) == 0:
+        sys.exit(0)
+sys.exit(0)
+...
 """

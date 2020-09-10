@@ -103,7 +103,7 @@ def show_movie(catalog, index):
 # ==============================
 # Opción de programa alternativa.
 # ==============================
-# Opción2.
+# Opción 1.
 """
 def initCatalog_movies():
 ||||"""
@@ -141,7 +141,7 @@ with open(moviesfile,encoding='utf-8-sig') as input_file:
     for movie in file_reader:
         model.addMovie(catalog, movie)    
 """
-"""" Opcion 3
+""" Opcion 2
 def init_catalog():
     # catalog es utilizado para interactuar con el modelo.
     catalog = model.new_catalog()
@@ -155,8 +155,6 @@ def CastingCatalog():
     castingCatalog = model.newCastingCatalog()
     return  castingCatalog
     
-""""
-""""Opcion 3
 def loadData(moviesCatalog, castingCatalog, movies, casting):
     loadMovies(castingCatalog, casting)
     loadMovies(moviesCatalog, movies)
@@ -177,24 +175,14 @@ def loadCasting(castingCatalog,catalog):
         for movie in file_reader:
             model.addCatsing(castingCatalog, movie) 
 
-...
-""""
-# Opción 1
-"""    
-
+ 
 def movies_size(catalog):
-    """
-# Número de películas leídas
-"""
-return model.moviesSize(catalog)
-"""
-# Opción 1
-"""
+    # Número de películas leídas
+    return model.moviesSize(catalog)
+
+
 
 def movies_data(catalog, position):
-    """
-# Devuelve el vote average de la película
-""" 
-return model.movie_name(catalog,position),model.movie_relase_date(catalog,position),model.movie_vote_average(catalog,position), model.movie_vote_count(catalog,position),model.movie_language(catalog, position)
-
+    # Devuelve el vote average de la película
+    return model.movie_name(catalog,position),model.movie_relase_date(catalog,position),model.movie_vote_average(catalog,position), model.movie_vote_count(catalog,position),model.movie_language(catalog, position)
 """
