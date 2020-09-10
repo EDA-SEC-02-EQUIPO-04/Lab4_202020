@@ -103,7 +103,7 @@ def show_movie(catalog, index):
 # ==============================
 # Opción de programa alternativa.
 # ==============================
-# OpciónB.
+# Opción2.
 """
 def initCatalog_movies():
 ||||"""
@@ -141,6 +141,44 @@ with open(moviesfile,encoding='utf-8-sig') as input_file:
     for movie in file_reader:
         model.addMovie(catalog, movie)    
 """
+"""" Opcion 3
+def init_catalog():
+    # catalog es utilizado para interactuar con el modelo.
+    catalog = model.new_catalog()
+    return catalog
+
+def MoviesCatalog():
+    moviesCatalog = model.newMoviesCatalog()
+    return moviesCatalog
+
+def CastingCatalog():
+    castingCatalog = model.newCastingCatalog()
+    return  castingCatalog
+    
+""""
+""""Opcion 3
+def loadData(moviesCatalog, castingCatalog, movies, casting):
+    loadMovies(castingCatalog, casting)
+    loadMovies(moviesCatalog, movies)
+
+def loadMovies(moviesCatalog, catalog):
+    dialect = csv.excel()
+    dialect.delimiter =';'
+    with open(moviesCatalog,encoding='utf-8-sig') as input_file:
+        file_reader = csv.DictReader(input_file, dialect=dialect)
+        for movie in file_reader:
+            model.addMovie(moviesCatalog, movie) 
+
+def loadCasting(castingCatalog,catalog):
+    dialect = csv.excel()
+    dialect.delimiter =';'
+    with open(moviesCatalog,encoding='utf-8-sig') as input_file:
+        file_reader = csv.DictReader(input_file, dialect=dialect)
+        for movie in file_reader:
+            model.addCatsing(castingCatalog, movie) 
+
+...
+""""
 # Opción 1
 """    
 
